@@ -15,4 +15,4 @@ allow_prereleases = true
 pylint = "*"
 
 [packages]
-couchbase = "*"
+couchbase = "==2.5.9"
