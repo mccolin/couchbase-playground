@@ -8,9 +8,15 @@ Docker Compose configuration will:
 
 Couchbase Python bindings can be installed:
 ```bash
+$> brew install libcouchbase
 $> pip install couchbase
 ```
-(or use `pipenv install` with local Pipfile)
+
+(or use pipenv with local Pipfile):
+```bash
+$> brew install libcouchbase
+$> pipenv install
+```
 
 ## Couchbase Startup
 
@@ -74,9 +80,13 @@ $> docker-compose down
 
 Once Couchbase is up and running within Docker, open http://localhost:8091 in browser to access Couchbase administrative panel.
 
+Select `Setup New Cluster` and give the new cluster a name.
+
 First time, you will have to create and Administrator user. Recommend a simple credential here for local development:
 * username: Administrator
 * password: password
+
+Creating the default couchbase setup is recommended, but will require your docker to have more memory. This can be done by going into your docker settings under `Advanced` and upping memory from 2GB to at least 3GB, 4+ is recommended.
 
 Your system should reveal itself as a **Cluster** with a single **Node**, likely at a Docker-internal IP address (e.g., 172.*).
 
